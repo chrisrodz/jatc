@@ -16,3 +16,7 @@ npm install
 ```
 
 Then in two separate windows run `webpack -w` and  `flask run`.
+
+License
+=======
+MIT
