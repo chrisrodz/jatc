@@ -1,5 +1,5 @@
 {
-  "name": "beacon",
+  "name": "Just Another Twitter Clone",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "dependencies": {
     "react": "^0.14.3",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^0.14.3"
   },
   "devDependencies": {

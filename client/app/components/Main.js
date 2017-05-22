@@ -1,9 +1,10 @@
 import React from 'react'
+import CoquiList from './CoquiList'
 
 const Main = () => {
   return (
       <div className="main-container">
-        <h2>Tu mai es la gorda</h2>
+        <CoquiList coquis={[]} />
       </div>
   )
 }
