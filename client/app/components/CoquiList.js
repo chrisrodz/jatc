@@ -15,9 +15,12 @@ class CoquiList extends React.Component {
         handleMessageChange(e) {
                 this.setState({ message: e.target.value })
         }
-        handleSubmit() {
+        handleSubmit(e) {
+                e.preventDefault();
+                if (!this.state.message) {
+                        return
+                }
                 axios.post(`/coqui`, {message: this.state.message}).then((res) => {
-                        console.log(res);
                         this.setState({ message: '' })
                         this.init()
                 })
@@ -38,10 +41,12 @@ class CoquiList extends React.Component {
                                         ))}
                                 </ul>
                                 <div className="input-group">
-                                        <input type='text' className='form-control' placeholder='Add new coqui' value={this.state.message} onChange={(e) => this.handleMessageChange(e)}/>
-                                        <span className='input-group-btn'>
-                                                <button className='btn btn-default' type='button' onClick={() => this.handleSubmit()}> Submit </button>
-                                        </span>
+                                        <form onSubmit={(e) => this.handleSubmit(e)}>
+                                                <input type='text' className='form-control' placeholder='Add new coqui' value={this.state.message} onChange={(e) => this.handleMessageChange(e)}/>
+                                                <span className='input-group-btn'>
+                                                        <button className='btn btn-default' type='submit'> Submit </button>
+                                                </span>
+                                        </form>
                                 </div>
                         </div>
                 )
